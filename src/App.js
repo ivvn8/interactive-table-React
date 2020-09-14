@@ -11,7 +11,6 @@ import Pagination from './components/Pagination';
 import Search from './components/Search';
 import AddRow from './components/AddRow';
 
-
 function App() {
 
   const [modeSelected, setModeSelected] = useState()
@@ -73,6 +72,14 @@ function App() {
     )))
   }
 
+  const addRow = (newRow) => {
+    newRow && setResponse(
+      [newRow,
+        ...response]
+    )
+    console.log(response)
+  }
+
   return (
     <div className="container mt-5">
       {!modeSelected && <ModeSelector modeSelect={modeSelect} />}
@@ -82,7 +89,7 @@ function App() {
           inputHandler={inputHandler}
           searchHandler={searchHandler}
         />}
-      {isLoaded && <AddRow />}
+      {isLoaded && <AddRow addRow={addRow} />}
       {isLoaded &&
         <Table
           response={currentUsers}
