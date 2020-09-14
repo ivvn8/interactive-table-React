@@ -39,7 +39,7 @@ const AddRow = ({ addRow }) => {
                     <form onSubmit={formSubmit}>
                         <div className="form-group">
                             <label>Id</label>
-                            <input type="text" className="form-control" required onChange={event => setUserId(parseInt(event.target.value))} />
+                            <input type="number" className="form-control" required onChange={event => setUserId(event.target.value)} />
                         </div>
                         <div className="form-group">
                             <label>First Name</label>
@@ -51,14 +51,18 @@ const AddRow = ({ addRow }) => {
                         </div>
                         <div className="form-group">
                             <label>Email</label>
-                            <input type="text" className="form-control" required onChange={event => setUserEmail(event.target.value)} />
+                            <input type="email" className="form-control" required onChange={event => setUserEmail(event.target.value)} />
                         </div>
                         <div className="form-group">
                             <label>Phone</label>
-                            <input type="text" className="form-control" required onChange={event => setUserPhone(event.target.value)} />
+                            <input type="number" className="form-control" required onChange={event => setUserPhone(event.target.value)} />
                         </div>
                         <div className="form-group d-flex justify-content-between">
-                            <button type="submit" className="btn btn-primary">Добавить в таблицу</button>
+                            <button type="submit"
+                                className="btn btn-info"
+                                disabled={
+                                    !userId || !userFirstName || !userLastName || !userEmail || !userPhone
+                                }>Добавить в таблицу</button>
                             <button className="btn btn-secondary" onClick={handleClose}>Закрыть</button>
                         </div>
                     </form>

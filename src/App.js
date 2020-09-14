@@ -79,7 +79,6 @@ function App() {
     )
   }
 
-  console.log(response)
 
   return (
     <div className="container mt-5">
