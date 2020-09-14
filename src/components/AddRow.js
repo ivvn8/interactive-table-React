@@ -39,7 +39,7 @@ const AddRow = ({ addRow }) => {
                     <form onSubmit={formSubmit}>
                         <div className="form-group">
                             <label>Id</label>
-                            <input type="text" className="form-control" required onChange={event => setUserId(event.target.value)} />
+                            <input type="text" className="form-control" required onChange={event => setUserId(parseInt(event.target.value))} />
                         </div>
                         <div className="form-group">
                             <label>First Name</label>

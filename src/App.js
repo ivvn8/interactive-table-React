@@ -77,8 +77,9 @@ function App() {
       [newRow,
         ...response]
     )
-    console.log(response)
   }
+
+  console.log(response)
 
   return (
     <div className="container mt-5">
