@@ -79,7 +79,6 @@ function App() {
     )
   }
 
-
   return (
     <div className="container mt-5">
       {!modeSelected && <ModeSelector modeSelect={modeSelect} />}

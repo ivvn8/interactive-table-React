@@ -1,23 +1,21 @@
 import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 
-
 const AddRow = ({ addRow }) => {
 
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false)
     const [userId, setUserId] = useState()
     const [userFirstName, setUserFirstName] = useState()
     const [userLastName, setUserLastName] = useState()
     const [userEmail, setUserEmail] = useState()
     const [userPhone, setUserPhone] = useState()
-    const [newRow, setNewRow] = useState()
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
 
-    const formSubmit = (event) => {
-        event.preventDefault()
-        setNewRow({
+    const formSubmit = (e) => {
+        e.preventDefault()
+        const newRow = ({
             id: userId,
             firstName: userFirstName,
             lastName: userLastName,
@@ -55,7 +53,7 @@ const AddRow = ({ addRow }) => {
                         </div>
                         <div className="form-group">
                             <label>Phone</label>
-                            <input type="number" className="form-control" required onChange={event => setUserPhone(event.target.value)} />
+                            <input type="phone" className="form-control" required onChange={event => setUserPhone(event.target.value)} />
                         </div>
                         <div className="form-group d-flex justify-content-between">
                             <button type="submit"
